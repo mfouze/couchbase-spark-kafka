@@ -14,20 +14,21 @@ class LoggingFilter @Inject()(implicit val mat: Materializer, ec: ExecutionConte
   def apply(nextFilter: RequestHeader => Future[Result])
            (requestHeader: RequestHeader): Future[Result] = {
     val startTime = System.currentTimeMillis
-    nextFilter(requestHeader).map { result =>
-      val endTime = System.currentTimeMillis
-      val requestTime = endTime - startTime
+    nextFilter(requestHeader)
+      .map { result =>
+        val endTime = System.currentTimeMillis
+        val requestTime = endTime - startTime
 
-/*      if ((cptCall % 100==0)||(requestTime>=10)) {
-        val correlationId = requestHeader.headers.get(clientNameKey)
-        val clientName = requestHeader.headers.get(correlationIdKey)
-        val identity = clientName.orElse(correlationId).getOrElse("?")
-        logger.warn(s"[$identity] - ${requestHeader.method} ${requestHeader.uri}  ${requestTime}ms  ${result.header.status}")
+        /*      if ((cptCall % 100==0)||(requestTime>=10)) {
+                val correlationId = requestHeader.headers.get(clientNameKey)
+                val clientName = requestHeader.headers.get(correlationIdKey)
+                val identity = clientName.orElse(correlationId).getOrElse("?")
+                logger.warn(s"[$identity] - ${requestHeader.method} ${requestHeader.uri}  ${requestTime}ms  ${result.header.status}")
+              }
+              cptCall+=1*/
+        result
+
       }
-      cptCall+=1*/
-      result
-
-    }
 
   }
 }

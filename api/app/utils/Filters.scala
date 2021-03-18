@@ -5,7 +5,6 @@ import com.google.inject.Inject
 import play.api.http.{DefaultHttpFilters, EnabledFilters}
 
 class Filters @Inject()(defaultFilters: EnabledFilters,
-                        statusAndRouteLatencyAndCounterFilter: StatusAndRouteLatencyAndCounterFilter,
-                        log: LoggingFilter) extends DefaultHttpFilters(defaultFilters.filters :+ statusAndRouteLatencyAndCounterFilter :+ log: _*)
+                        log: LoggingFilter) extends DefaultHttpFilters(defaultFilters.filters :+ log: _*)
 
 
