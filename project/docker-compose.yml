@@ -1,0 +1,52 @@
+version: '3.3'
+services:
+#  spark-master:
+#    image: karkaratz/spark_3_0_1:spark-master
+#    container_name: spark-a-01
+#    ports:
+#      - 4040:4040
+#      - 7077:7077
+#      - 8080:8080
+#      - 6066:6066
+#    volumes:
+#      - ./spark/jar:/data/
+#    environment:
+#      - "SPARK_LOCAL_IP=spark-master"
+#
+#  spark-worker-1:
+#    image: karkaratz/spark_3_0_1:spark-worker
+#    container_name: spark-a-02
+#    depends_on:
+#      - spark-master
+#    volumes:
+#      - ./spark/jar:/data/
+#    ports:
+#      - 8084:8081
+#    environment:
+#      - SPARK_MASTER=spark://spark-master:7077
+#      - SPARK_WORKER_CORES=1
+#      - SPARK_WORKER_MEMORY=1G
+#      - SPARK_DRIVER_MEMORY=128m
+#      - SPARK_EXECUTOR_MEMORY=256m
+#
+#  spark-worker-2:
+#    image: karkaratz/spark_3_0_1:spark-worker
+#    container_name: spark-a-03
+#    depends_on:
+#      - spark-master
+#    volumes:
+#      - ./spark/jar:/data/
+#    environment:
+#      - SPARK_MASTER=spark://spark-master:7077
+#      - SPARK_WORKER_CORES=1
+#
+#  spark-worker-3:
+#    image: karkaratz/spark_3_0_1:spark-worker
+#    container_name: spark-a-04
+#    depends_on:
+#      - spark-master
+#    volumes:
+#      - ./spark/jar:/data/
+#    environment:
+#      - SPARK_MASTER=spark://spark-master:7077
+#      - SPARK_WORKER_CORES=1

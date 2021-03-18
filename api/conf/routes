@@ -1,0 +1,16 @@
+GET        /_healthcheck              controllers.HealthCheck.getHealth
+
+GET        /swagger.json              controllers.ApiHelpController.getResources
+
+GET        /api/v1/hello/:name        controllers.HomeController.sayHello(name:String)
+
+# Map static resources from the /public folder to the /assets URL path
+
+
+#GET        /docs/               controllers.Assets.at(path="/CouchbaseConnect/playScalaKafka/public/swagger/",file="index.html")
+
+#GET        /                    controllers.HomeController.index
+
+# Swagger UI ressources
+GET        /                          controllers.Assets.at(path="/public/swagger-ui",file="index.html")
+GET        /*file                     controllers.Assets.at(path="/public/swagger-ui",file)

@@ -2,3 +2,5 @@
 .bsp
 .idea
 project/target/
+api/target
+api/logs
